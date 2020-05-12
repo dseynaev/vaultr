@@ -148,7 +148,7 @@ The \code{vault_test_server_install} function will download a
 \examples{
 
 # Try and start a server; if one is not enabled (see details
-# above) then this will return \\code{NULL}
+# above) then this will return \code{NULL}
 server <- vault_test_server(if_disabled = message)
 
 if (!is.null(server)) {
@@ -165,7 +165,7 @@ if (!is.null(server)) {
 
   # The server stops automatically when the server object is
   # garbage collected, or it can be turned off with the
-  # \\code{kill} method:
+  # \code{kill} method:
   server$kill()
   tryCatch(client$status(), error = function(e) message(e$message))
 }

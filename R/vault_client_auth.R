@@ -31,6 +31,7 @@ vault_client_auth <- R6::R6Class(
     github = NULL,
     token = NULL,
     userpass = NULL,
+    aws = NULL,
 
     initialize = function(api_client) {
       super$initialize("administer vault's authentication methods")
@@ -48,6 +49,9 @@ vault_client_auth <- R6::R6Class(
       add_const_member(
         self, "approle",
         vault_client_auth_approle$new(private$api_client, "approle"))
+      add_const_member(
+        self, "aws",
+        vault_client_auth_aws$new(private$api_client, "aws"))
     },
 
     backends = function() {
